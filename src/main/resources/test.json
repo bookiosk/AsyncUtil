@@ -30,10 +30,10 @@
   "WorkWrapper": [
     {
       "id": "",
-      "worker": "",
-      "callback": "",
-      "depend": "",
-      "next": "",
+      "workerId": "",
+      "callbackId": "",
+      "dependWrappers": [],
+      "nextWrappers": [],
       "param": {}
     }
   ]
