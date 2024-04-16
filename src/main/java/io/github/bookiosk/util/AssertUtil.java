@@ -10,6 +10,21 @@ import java.util.function.Supplier;
  */
 public class AssertUtil {
 
+
+    public static <X extends Throwable> void isTrue(boolean expression, Supplier<? extends X> supplier) throws X {
+        if (!expression) {
+            throw supplier.get();
+        }
+    }
+
+    public static void isTrue(boolean expression, String errorMsgTemplate, Object... params) throws IllegalArgumentException {
+        isTrue(expression, () -> new IllegalArgumentException(StrUtil.format(errorMsgTemplate, params)));
+    }
+
+    public static void isTrue(boolean expression) throws IllegalArgumentException {
+        isTrue(expression, "[Assertion failed] - this expression must be true");
+    }
+
     public static <T, X extends Throwable> T notNull(T object, Supplier<X> errorSupplier) throws X {
         if (null == object) {
             throw errorSupplier.get();
