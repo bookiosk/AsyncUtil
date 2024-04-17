@@ -22,7 +22,7 @@ public class Async {
     /**
      * 默认不定长线程池
      */
-    private static final ThreadPoolExecutor COMMON_POOL = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+    private static final ThreadPoolExecutor COMMON_POOL = AsyncThreadPool.getInstance();
     /**
      * 注意，这里是个static，也就是只能有一个线程池。用户自定义线程池时，也只能定义一个
      */

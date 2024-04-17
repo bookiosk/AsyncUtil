@@ -99,7 +99,7 @@ public class DefaultTemplateUtil extends TemplateUtil {
             String workerWrapperId = workerWrapper.get("id").getAsString();
             String workerId = workerWrapper.get("workerId").getAsString();
             String callbackId = workerWrapper.get("callbackId").getAsString();
-
+            // todo 这里后面借鉴下Spring的三级缓存的使用初始化wrapper
         }
     }
 
