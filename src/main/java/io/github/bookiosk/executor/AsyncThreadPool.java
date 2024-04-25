@@ -36,19 +36,16 @@ public class AsyncThreadPool extends ThreadPoolExecutor {
     @Override
     protected void beforeExecute(Thread t, Runnable r) {
         super.beforeExecute(t, r);
-        System.out.println("准备执行任务：" + r.toString());
     }
 
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
         super.afterExecute(r, t);
-        System.out.println("任务执行完毕：" + r.toString());
     }
 
     @Override
     protected void terminated() {
         super.terminated();
-        System.out.println("线程池已关闭");
     }
 
     private static class AsyncThreadFactory implements ThreadFactory {
